@@ -1,0 +1,30 @@
+name: Github Pages Deployment
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  deploy:
+    name: deploy GH pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Install and build
+        run: pnpm i && pnpm run gen && pnpm run build:gh
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.TOKEN }}
+          branch: gh-pages
+          folder: dist
+          clean: true

@@ -1,0 +1,33 @@
+{
+  "name": "theme-gallery",
+  "version": "0.0.1",
+  "description": "theme gallery",
+  "author": "lhlyu",
+  "type": "module",
+  "scripts": {
+    "fmt": "prettier --write .",
+    "dev": "vite --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:gh": "vue-tsc && vite build --mode github",
+    "serve": "vite preview --host"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "colord": "^2.9.3",
+    "pinia": "^2.0.33",
+    "pinia-plugin-persistedstate": "^3.1.0",
+    "vue": "^3.2.47",
+    "vue-i18n": "^9.2.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "@vue/compiler-sfc": "^3.2.47",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
+    "sass": "^1.59.3",
+    "typescript": "^4.9.5",
+    "vite": "^4.2.0",
+    "vue-tsc": "^1.2.0"
+  }
+}
