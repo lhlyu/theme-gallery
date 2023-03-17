@@ -146,6 +146,8 @@ body {
                 width: 70%;
                 height: 96%;
                 border-radius: 10px;
+                padding: 20px;
+                box-sizing: border-box;
                 overflow: auto;
                 background-color: v-bind(bodyColor);
 

@@ -1,8 +1,8 @@
 <template>
     <Field :label="label">
         <div class="group">
-            <input type="text" id="name" :value="modelValue" :placeholder="$t(label)" @input="$emit('update:modelValue', $event.target.value)" />
-            <input type="color" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" />
+            <input type="text" id="name" :value="modelValue" :placeholder="$t(label)" @input="$emit('update:modelValue', $event)" />
+            <input type="color" :value="modelValue" @input="onColorInput" />
         </div>
     </Field>
 </template>
@@ -23,6 +23,13 @@ const props = defineProps({
 })
 
 const { lineColor } = useTheme()
+
+
+const emit = defineEmits(['update:modelValue'])
+
+const onColorInput = (e: any) => {
+    emit('update:modelValue', e.target.value)
+}
 </script>
 
 <style scoped lang="scss">

@@ -13,16 +13,10 @@ import Field from '../field/index.vue'
 import useTheme from '../../hooks/useTheme'
 import useSiteStore from '../../stores/site'
 
-const props = defineProps({
-    label: {
-        type: String,
-        default: ''
-    },
-    accents: {
-        type: Array,
-        default: () => []
-    }
-})
+const props = defineProps<{
+    label: string,
+    accents: string[]
+}>()
 
 const { accentColor } = useTheme()
 
