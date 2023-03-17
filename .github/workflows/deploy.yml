@@ -19,7 +19,7 @@ jobs:
           version: 7
 
       - name: Install and build
-        run: pnpm i && pnpm run gen && pnpm run build:gh
+        run: pnpm i && pnpm run build:gh
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
